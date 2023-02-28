@@ -11,6 +11,8 @@ public class Application {
 		operations.write(PATH, "hola1");
 		operations.write(PATH, "hola2");
 		operations.write(PATH, "hola3");
+		System.out.println(operations.read(PATH));
 		System.out.println("Run SUCCESS");
+		
 	}
 }

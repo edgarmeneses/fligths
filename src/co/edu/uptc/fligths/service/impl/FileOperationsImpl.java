@@ -32,6 +32,11 @@ public class FileOperationsImpl implements FIleOperations{
 	   
 	 * En caso de no encontrar la ruta o si el archivo ya esta abiero se genera una excepcion
 	   del tipo IoException. Si el archivo no existe en la ruta se crea atomaticamente
+	   
+	   Siempre que se escriba en un archivo al finalizar el proceso se debe cerrar dicho archivo
+	   No solo para liberar recursos en el equipo si no tambien para confirmar los cambios agregados
+	   adicionalmente si no se cierra el archivo este se bloquea por lo que no puede ser
+	   escrito o leido por otro recurso hasta que se libere este bloqueo
 	 */
 	@Override
 	public void write(String path, Object info) {
@@ -67,6 +72,11 @@ public class FileOperationsImpl implements FIleOperations{
 	
 	/***
 	 * Metodo que permite leer un archivo
+	 
+	 * Si no se encuentra el archivo se genera una excepcion del tipo FileNotFoundException
+	   Tambien se debe manejar la IOExcepcion por si falla la apertura del archivo
+	   No es necesario lanzar la excepcion del tipo FileNotFoundException pues es de tipo
+	   IOException asi que solo es necesario alnzar esta ultima
 	 * @param path es la ruta donde se encuentra el archivo que se quiere leer
 	 *
 	 */
@@ -74,10 +84,16 @@ public class FileOperationsImpl implements FIleOperations{
 	public String read(String path) {
 		File file = new File(path);
 		StringBuilder builder = new StringBuilder();
+		// Se usa la asignacion de scanner dentro del try para no tener que usar el 
+		// Metodo close y cerrar el archivo
 		try (Scanner scanner = new Scanner(file)) {
+			// Con el delimitador se indica en que momento durante la lectura del archivo
+			// Se encuentra otra linea
 			scanner.useDelimiter("\n");
-			
+			// con hasNext se valida si existe una siguente pocision
 			while (scanner.hasNext()) {
+				// scanner.next() se obtiene el siguente valor
+				// tambien se puede usar scanner.nextInt(), nextDouble() ...
 				builder.append(scanner.next()).append("\n");
 			}
 		} catch (FileNotFoundException e) {

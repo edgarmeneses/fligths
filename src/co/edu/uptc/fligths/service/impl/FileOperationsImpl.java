@@ -17,6 +17,7 @@ import co.edu.uptc.fligths.service.FIleOperations;
  *
  */
 public class FileOperationsImpl implements FIleOperations{
+	private static FIleOperations fIleOperations;
 
 	/**
 	 * Metodo que permite escribir una linea en un fiechero de texto
@@ -101,6 +102,13 @@ public class FileOperationsImpl implements FIleOperations{
 			e.printStackTrace();
 		}
 		return builder.toString();
+	}
+	
+	public static FIleOperations getInstance() {
+		if (fIleOperations == null) {
+			fIleOperations = new FileOperationsImpl();
+		}
+		return fIleOperations;
 	}
 
 }

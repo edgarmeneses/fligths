@@ -71,6 +71,6 @@ public class Airplane {
 
 	@Override
 	public String toString() {
-		return  code + ";" + type + ";" + airplanClass + ";" + capacity;
+		return  code + ";" + type + ";" + airplanClass + ";" + capacity+";";
 	}
 }

@@ -8,6 +8,7 @@ public class Airplane {
 	int capacity;
 	long code;
 	int chairsNumbers;
+	String description;
 	
 	public Airplane() {
 	}
@@ -51,6 +52,14 @@ public class Airplane {
 	public void setCode(long code) {
 		this.code = code;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	public int getChairsNumbers() {
 		return chairsNumbers;
@@ -80,6 +89,6 @@ public class Airplane {
 
 	@Override
 	public String toString() {
-		return  code + ";" + type + ";" + airplanClass + ";" + capacity+";"+chairsNumbers;
+		return  code + ";" + type + ";" + airplanClass + ";" + capacity+";"+chairsNumbers+";"+description+";";
 	}
 }

@@ -26,6 +26,11 @@ public class InputData {
 		return readOption("Choose an option");
 	}
 	
+	public long readLong(String message) {
+		System.out.println(message);
+		return scanner.nextLong();
+	}
+	
 	public String readText(String message) {
 		System.out.println(message);
 		return scanner.next();

@@ -8,4 +8,8 @@ public class Messages {
 	public static void invalidOption() {
 		System.out.println("Invalid option choose an other");
 	}
+	
+	public static void success() {
+		System.out.println("The action ran successful");
+	}
 }

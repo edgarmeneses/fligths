@@ -15,4 +15,8 @@ public class AirplanView {
 	public static int readCapacity() {
 		return InputData.getInstance().readOption("Write the airplan capacity");
 	}
+	
+	public static long readCode() {
+		return InputData.getInstance().readLong("Write the airplan code");
+	}
 }

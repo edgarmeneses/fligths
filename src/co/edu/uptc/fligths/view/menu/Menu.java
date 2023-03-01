@@ -1,4 +1,4 @@
-package co.edu.uptc.fligths.view;
+package co.edu.uptc.fligths.view.menu;
 
 public class Menu {
 	

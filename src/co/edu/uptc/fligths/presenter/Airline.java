@@ -3,6 +3,7 @@ package co.edu.uptc.fligths.presenter;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.edu.uptc.fligths.app.Constants;
 import co.edu.uptc.fligths.model.AirplanType;
 import co.edu.uptc.fligths.model.Airplane;
 import co.edu.uptc.fligths.model.Pilot;
@@ -37,7 +38,8 @@ public class Airline {
 			int capacity = AirplanView.readCapacity();
 			Airplane airplane = new Airplane(airplaneClass, type, capacity, capacity);
 			
-			
+			airplanes.add(airplane);
+			// operations.write(Constants.AIRPLANE_PATH, airplane);
 			break;
 		default:
 			Messages.invalidOption();

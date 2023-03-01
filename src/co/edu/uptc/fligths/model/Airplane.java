@@ -7,6 +7,7 @@ public class Airplane {
 	AirplanType type;
 	int capacity;
 	long code;
+	int chairsNumbers;
 	
 	public Airplane() {
 	}
@@ -51,6 +52,14 @@ public class Airplane {
 		this.code = code;
 	}
 
+	public int getChairsNumbers() {
+		return chairsNumbers;
+	}
+
+	public void setChairsNumbers(int chairsNumbers) {
+		this.chairsNumbers = chairsNumbers;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(airplanClass, capacity, code, type);
@@ -71,6 +80,6 @@ public class Airplane {
 
 	@Override
 	public String toString() {
-		return  code + ";" + type + ";" + airplanClass + ";" + capacity;
+		return  code + ";" + type + ";" + airplanClass + ";" + capacity+";"+chairsNumbers;
 	}
 }
